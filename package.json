@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "readline-sync": ">0",
+    "startbootstrap-freelancer": ">0"
+  }
+}
