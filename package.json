@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "readline-sync": ">0",
-    "startbootstrap-freelancer": ">0"
+    "fasam-imc-calc": "0.0.4",
+    "median": "0.0.2",
+    "moment": "^2.25.3",
+    "readline-sync": "^1.4.10"
   }
 }
