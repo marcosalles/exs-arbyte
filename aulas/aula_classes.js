@@ -37,3 +37,10 @@ rafa.darBoasVindasPara(max);
 console.log(max.fazerCafe());
 max.nome = 'Marco';
 console.log(max.fazerCafe());
+
+console.log(rafa.fazerCafe());
+rafa.fazerCafe = function() {
+	console.log(`${this.nome} fez nescafé.`);
+	return `nescafé aguado feito por ${this.nome}`;
+}
+console.log(rafa.fazerCafe());
