@@ -20,14 +20,16 @@ class Pessoa {
 	}
 }
 
-var max = new Pessoa('Max', 'nenhum');
+var max = new Pessoa('Max', 'Booooooa noite', 'nenhum');
 console.log(max.nome);
 console.log(max.cabelo);
 max.andar();
 console.log(max.fazerCafe());
 
-var rafa = new Pessoa('Rafa', 'comprido');
+var rafa = new Pessoa('Rafa', 'Coé', 'comprido');
 console.log(rafa.nome);
 console.log(rafa.cabelo);
 rafa.andar();
-console.log(rafa.fazerCafe());
+
+max.darBoasVindasPara(rafa);
+rafa.darBoasVindasPara(max);
