@@ -16,7 +16,7 @@ class Pessoa {
 
 	fazerCafe() {
 		console.log(`${this.nome} fez café.`);
-		return 'café sem açucar';
+		return `café sem açucar feito por ${this.nome}`;
 	}
 }
 
@@ -33,3 +33,7 @@ rafa.andar();
 
 max.darBoasVindasPara(rafa);
 rafa.darBoasVindasPara(max);
+
+console.log(max.fazerCafe());
+max.nome = 'Marco';
+console.log(max.fazerCafe());
