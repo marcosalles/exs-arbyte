@@ -20,19 +20,13 @@ class Carro {
 
 var rs = require('readline-sync');
 
-var marca1 = rs.question('Marca 1: ');
-var modelo1 = rs.question('Modelo 1: ');
-var cor1 = rs.question('Cor 1: ');
-var carro1 = new Carro(marca1, modelo1, cor1);
-// console.log(carro1);
-
-var marca2 = rs.question('Marca 2: ');
-var modelo2 = rs.question('Modelo 2: ');
-var cor2 = rs.question('Cor 2: ');
-var carro2 = new Carro(marca2, modelo2, cor2);
-// console.log(carro2);
-
-var carros = [carro1, carro2];
+function pedeCarro(leitor) {
+	var marca = leitor.question('Marca: ');
+	var modelo = leitor.question('Modelo: ');
+	var cor = leitor.question('Cor: ');
+	var carro = new Carro(marca, modelo, cor);
+	return carro;
+}
 
 function saoIguais(c1, c2) {
 	var mesmoModelo = c1.modelo == c2.modelo;
@@ -40,4 +34,26 @@ function saoIguais(c1, c2) {
 	return mesmaMarca && mesmoModelo;
 }
 
-console.log('São iguais:', saoIguais(carro1, carro2));
+function saoIguaisEmMarca(c1, c2) {
+	var mesmaMarca = c1.marca == c2.marca;
+	return mesmaMarca;
+}
+
+var numeroDeCarros = rs.questionInt('Quantos carros? ');
+var garagem = [];
+for (var i = 0; i < numeroDeCarros; i++) {
+	var carro = pedeCarro(rs);
+	garagem.push(carro);
+}
+
+var marcasSaoIguais = true;
+for (var i = 0; i < garagem.length - 1; i++) {
+	var carro1 = garagem[i];
+	var carro2 = garagem[i + 1];
+	if (!saoIguaisEmMarca(carro1, carro2)) {
+		marcasSaoIguais = false;
+		break;
+	}
+}
+
+console.log('Todos os carros tem a mesma marca:', marcasSaoIguais);
