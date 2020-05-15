@@ -57,3 +57,11 @@ for (var i = 0; i < garagem.length - 1; i++) {
 }
 
 console.log('Todos os carros tem a mesma marca:', marcasSaoIguais);
+
+var iguaisEmString;
+if (marcasSaoIguais) {
+	iguaisEmString = 'Sim';
+} else {
+	iguaisEmString = 'Não';
+}
+console.log('Todos os carros tem a mesma marca:', iguaisEmString);

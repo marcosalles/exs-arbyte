@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Atividade DOM Ex 1</title>
+	
+</head>
+<body>
+	<h1 id="cabecalho">Atividade</h1>
+	<button onclick="fazMagica()">Faz magica</button>
+	<hr>
+	<input id="caixaDeTexto" type="text">
+	<button onclick="divideFrase()">Divide frase</button>
+	<script>
+		function fazMagica() {
+			var h1 = document.getElementById('cabecalho');
+			console.log(h1);
+			var frase = prompt('Escreva uma frase para a mágica continuar:');
+			h1.innerHTML = frase;
+		}
+
+		function divideFrase() {
+			console.log('Divide');
+			var caixaDeTexto = document.getElementById('caixaDeTexto');
+			var texto = caixaDeTexto.value;
+			imprimeLista(texto);
+		}
+
+		function imprimeLista(texto) {
+			console.log('Imprime lista com', texto);
+			var lista = document.createElement('ul');
+			var palavras = texto.split(' ');
+			// lista.innerHTML = '<li>'+palavras.join('</li><li>')+'</li>'
+			// a</li><li>b</li><li>c
+
+			for (let i = 0; i < palavras.length; i++) {
+				var palavra = palavras[i]; // batatinha
+
+				var item = document.createElement('li');
+				item.innerText = palavra; // <li>batatinha</li>
+				lista.append(item); // <ul><li>batatinha</li></ul>
+
+				// lista.innerHTML = lista.innerHTML + `<li>${palavra}</li>`;
+			}
+			document.body.append(lista);
+		}
+	</script>
+</body>
+</html>
