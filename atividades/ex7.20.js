@@ -46,3 +46,4 @@ if (querCriptografar) {
 	}
 	console.log('Palavra descifrada:', palavra.join(''));
 }
+
