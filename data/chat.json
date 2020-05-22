@@ -1,0 +1,26 @@
+[
+	{
+		"nome": "Max",
+		"mensagem": "Ola Luiz, de novo..."
+	},
+	{
+		"nome": "Luiz",
+		"mensagem": "Como vai você?"
+	},
+	{
+		"nome": "Max",
+		"mensagem": "Vou bem! Até logo!"
+	},
+	{
+		"nome": "Luiz",
+		"mensagem": "Até!"
+	},
+	{
+		"nome": "Wally",
+		"mensagem": "Eu to perdido"
+	},
+	{
+		"nome": "Max",
+		"mensagem": "Na praia ou no castelo?"
+	}
+]
