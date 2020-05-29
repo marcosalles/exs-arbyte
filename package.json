@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "axios": "^0.19.2",
     "fasam-imc-calc": "0.0.4",
     "median": "0.0.2",
     "moment": "^2.25.3",
