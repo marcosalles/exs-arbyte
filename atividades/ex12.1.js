@@ -8,36 +8,52 @@ cor.
 Após informar o primeiro carro peça o segundo carro também solicitando nome, modelo
 e cor.
 Ao final o algoritmo deve comparar se os carro são iguais.
-Um carro vai ser igual ao outros se modelo e nome possuem o mesmo valor.*/
+Um carro vai ser igual ao outros se modelo e nome possuem o mesmo valor.
+*/
 
 class Carro {
-	constructor(marca, modelo, cor) {
-		this.marca = marca;
+	constructor(nome, modelo, cor) {
+		this.nome = nome;
 		this.modelo = modelo;
 		this.cor = cor;
+	}
+
+	ehIgualAoOutroCarro(outroCarro) {
+		var nomesSaoIguais = this.nome == outroCarro.nome;
+		var modelosSaoIguais = this.modelo == outroCarro.modelo;
+		if (nomesSaoIguais && modelosSaoIguais) {
+			return true;
+		}
+		return false;
 	}
 }
 
 var rs = require('readline-sync');
 
-var marca1 = rs.question('Marca 1: ');
-var modelo1 = rs.question('Modelo 1: ');
-var cor1 = rs.question('Cor 1: ');
-var carro1 = new Carro(marca1, modelo1, cor1);
-// console.log(carro1);
-
-var marca2 = rs.question('Marca 2: ');
-var modelo2 = rs.question('Modelo 2: ');
-var cor2 = rs.question('Cor 2: ');
-var carro2 = new Carro(marca2, modelo2, cor2);
-// console.log(carro2);
-
-var carros = [carro1, carro2];
-
-function saoIguais(c1, c2) {
-	var mesmoModelo = c1.modelo == c2.modelo;
-	var mesmaMarca = c1.marca == c2.marca;
-	return mesmaMarca && mesmoModelo;
+function criarCarro() {
+	var nome = rs.question('Qual o nome do carro? ');
+	var modelo = rs.question('Qual o modelo do carro? ');
+	var cor = rs.question('Qual a cor do carro? ');
+	return new Carro(nome, modelo, cor);
 }
 
-console.log('São iguais:', saoIguais(carro1, carro2));
+var carro1 = criarCarro();
+// console.log(carro1);
+var carro2 = criarCarro();
+// console.log(carro2);
+
+// function saoCarrosIguais(carroA, carroB) {
+// 	var nomesSaoIguais = carroA.nome == carroB.nome;
+// 	var modelosSaoIguais = carroA.modelo == carroB.modelo;
+
+// 	if (nomesSaoIguais && modelosSaoIguais) {
+// 		return true;
+// 	}
+// 	return false;
+// }
+
+// var saoIguais = saoCarrosIguais(carro1, carro2);
+// console.log('são iguais: ' + saoIguais);
+
+var saoIguais = carro2.ehIgualAoOutroCarro(carro1);
+console.log('são iguais: ' + saoIguais);

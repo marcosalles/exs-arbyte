@@ -4,6 +4,7 @@
     "fasam-imc-calc": "0.0.4",
     "median": "0.0.2",
     "moment": "^2.25.3",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "sqlite3": "^4.2.0"
   }
 }
