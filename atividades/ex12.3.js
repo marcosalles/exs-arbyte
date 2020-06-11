@@ -8,3 +8,17 @@ Após isso no arquivo da atividade importe o módulo criado e solicite ao usuár
 números, utilize o módulo criado para calcular a média e no final imprima o resultado
 para o usuário.
 */
+
+// var rs = require('readline-sync');
+
+var calculaMedia = require('./calcula-media');
+var media = calculaMedia([10,0]);
+console.log(media);
+
+/*
+{
+	calculaMedia: function
+}
+*/
+
+// console.log(abobrinha.calculaMedia([10,4]));

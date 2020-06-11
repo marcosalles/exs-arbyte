@@ -16,6 +16,7 @@ class Carro {
 		this.nome = nome;
 		this.modelo = modelo;
 		this.cor = cor;
+		this.tanque = 0;
 	}
 
 	ehIgualAoOutroCarro(outroCarro) {
@@ -25,6 +26,10 @@ class Carro {
 			return true;
 		}
 		return false;
+	}
+
+	colocaGasolina(litros) {
+		this.tanque = this.tanque + litros;
 	}
 }
 
